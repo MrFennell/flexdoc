@@ -1,0 +1,24 @@
+{
+  "name": "flexdoc",
+  "version": "1.0.0",
+  "description": "Technical documentation on the CSS Flex property with examples.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "start": "nodemon ./lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrFennell/flexdoc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrFennell/flexdoc/issues"
+  },
+  "homepage": "https://github.com/MrFennell/flexdoc#readme"
+}

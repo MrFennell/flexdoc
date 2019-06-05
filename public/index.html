@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>CSS Flexbox: An Introduction</title>
+</head>
+<body>
+  <header>
+    <nav id="navbar">
+      <h1>CSS Flexbox</h1>
+        <ul id="navbar-container-ul">
+            <li class="nav-parent"><a href="#introduction">Introduction</a></li>
+            <li class="nav-parent"><a href="#parent-properties">Parent (Container) Properties</a></li>
+              <ul id="nav-parent-ul">
+                <li class="nav-child"><a href="#display-flex">display: flex</a></li>
+                <li class="nav-child"><a href="#flex-direction">flex-direction</a></li>
+                <li class="nav-child"><a href="#flex-wrap">flex-wrap</a></li>
+                <li class="nav-child"><a href="#flex-flow">flex-flow</a></li>
+                <li class="nav-child"><a href="#justify-content">justify-content</a></li>
+                <li class="nav-child"><a href="#align-items">align-items</a></li>
+                <li class="nav-child"><a href="#align-content">align-content</a></li>
+              </ul>
+            <li class="nav-parent"><a href="#child-properties">Child (Item) Properties</a></li>
+              <ul id="nav-parent-ul">
+                <li class="nav-child"><a href="#order">order</a></li>
+                <li class="nav-child"><a href="#flex-grow">flex-grow</a></li>
+                <li class="nav-child"><a href="#flex-shrink">flex-shrink</a></li>
+                <li class="nav-child"><a href="#flex-basis">flex-basis</a></li>
+                <li class="nav-child"><a href="#flex-shorthand">flex (shorthand)</a></li>
+                <li class="nav-child"><a href="#align-self">align-self</a></li>
+              </ul>
+        </ul>
+    </nav>
+  </header>
+  
+  <main id="main-doc">
+    <section class="main-section" id="introduction">
+      <h2>What is Flexbox?</h2>
+      <p>Those who worked on CSS before the age of HTML5 and CSS3 will remember the
+        pains of what should have been simple design layouts. Floats and positioning could
+        only take us so far, and we were often stuck using tricks to make everything fit together
+        on the web page's screen. This was only exacerbated by the rise of smartphone technology
+        and every site being made to fit in multiple screen sizes.
+      </p>
+      <p>CSS Flex is an exciting, new way to dynamically fit objects inside of a container. The main idea is
+        to let the container alter it's items' width, height and order to best fill the available space within itself.
+        This is huge in the age of smartphone technology where responsive design is a must.
+      </p>
+
+
+    </section>
+    
+    <section class="main-section" id="parent-properties">
+      <h2>Parent, or Container, properties</h2>
+      <p>When using Flexbox it is important to understand that there are two elements (or groups of elements) in play: the
+        container and the items inside, or the parent and its children. Both can be styled, which
+        is the real power of Flexbox!
+      </p>
+
+    </section>
+    <section class="main-section" id="display-flex">
+      <h3>Display as Flex</h3>
+      <p>Before the Flexbox layout there were four layout modules we could use:</p>
+        <ul>
+          <li>Block</li>
+          <li>Inline</li>
+          <li>Table</li>
+          <li>Position</li>
+        </ul>
+        <p>Setting a container element to flex is as simple as:</p>
+        <code>display : flex;</code>
+          <p>See below as the four blocks are aligned in a row by default.</p>
+          <p>Click the botton below to see what happens when the flex property is changed to "block".</p>
+          <button id="buttonFlex" onclick="flex()"> Unflex </button>
+          <p class="ex-code" id="ex-block-container-displayflex-code">display: flex;</p>
+        </div>
+        <div class="ex-container">
+          <div class="ex-block-container" id="ex-block-container-displayflex">
+              <div id="ex-block-A" class="ex-block"><span class="ex-text">A</span></div>
+              <div id="ex-block-B" class="ex-block"><span class="ex-text">B</span></div>
+              <div id="ex-block-C" class="ex-block"><span class="ex-text">C</span></div>
+              <div id="ex-block-D" class="ex-block"><span class="ex-text">D</span></div>
+          </div>
+          
+    </section>
+    <section class="main-section" id="flex-direction">
+      <h3>flex-direction</h3>
+      <p>The "flex-direction" property will define the main axis for the items. By default this is set to order from left to right on a horizontal axis, or:</p>
+      <code>flex-direction:row;</code>
+      <p>This can be changed to be from right to left or on a vertical axis. The following options are available:</p>
+      <code>flex-direction: row;          //(default): left to right in ltr; right to left in rtl</code>
+        <div class="ex-container">
+          <div class="ex-block-container" id="ex-block-container-flex-Row">
+              <div id="ex-block-A" class="ex-block"><span class="ex-text">A</span></div>
+              <div id="ex-block-B" class="ex-block"><span class="ex-text">B</span></div>
+              <div id="ex-block-C" class="ex-block"><span class="ex-text">C</span></div>
+              <div id="ex-block-D" class="ex-block"><span class="ex-text">D</span></div>
+          </div>
+        </div>
+      <code>flex-direction: row-reverse;  //right to left in ltr; left to right in rtl</code>
+
+        <div class="ex-container">
+          <div class="ex-block-container" id="ex-block-container-row-reverse">
+              <div id="ex-block-A" class="ex-block"><span class="ex-text">A</span></div>
+              <div id="ex-block-B" class="ex-block"><span class="ex-text">B</span></div>
+              <div id="ex-block-C" class="ex-block"><span class="ex-text">C</span></div>
+              <div id="ex-block-D" class="ex-block"><span class="ex-text">D</span></div>
+          </div>
+        </div>
+        <code>flex-direction: column; //same as row but top to bottom</code>
+        <div class="ex-container">
+          <div class="ex-block-container" id="ex-block-container-column">
+              <div id="ex-block-A" class="ex-block"><span class="ex-text">A</span></div>
+              <div id="ex-block-B" class="ex-block"><span class="ex-text">B</span></div>
+              <div id="ex-block-C" class="ex-block"><span class="ex-text">C</span></div>
+              <div id="ex-block-D" class="ex-block"><span class="ex-text">D</span></div>
+          </div>
+        </div>
+        <code>flex-direction: column-reverse: //same as row-reverse but bottom to top</code>
+        <div class="ex-container">
+          <div class="ex-block-container" id="ex-block-container-column-reverse">
+              <div id="ex-block-A" class="ex-block"><span class="ex-text">A</span></div>
+              <div id="ex-block-B" class="ex-block"><span class="ex-text">B</span></div>
+              <div id="ex-block-C" class="ex-block"><span class="ex-text">C</span></div>
+              <div id="ex-block-D" class="ex-block"><span class="ex-text">D</span></div>
+          </div>
+        </div>
+
+    <section class="main-section" id="flex-wrap">
+      <h3>flex-wrap</h3>
+      <p>By default Flex will try and fit everything onto one line. You can change that with the "flex-wrap" property.</p>
+      <code>flex-wrap : wrap;</code>
+      <p>This will fit items onto multiple lines depending on the width of the parent property. All options are:</p>
+      <code>flex-wrap: wrap;    //flex items will wrap onto multiple lines, from top to bottom.</code>
+      <div class="ex-container">
+        <div class="ex-block-container" id="ex-block-container-flex-wrap">
+            <div id="ex-block-A" class="ex-block-large"><span class="ex-text">A</span></div>
+            <div id="ex-block-B" class="ex-block-large"><span class="ex-text">B</span></div>
+            <div id="ex-block-C" class="ex-block-large"><span class="ex-text">C</span></div>
+            <div id="ex-block-D" class="ex-block-large"><span class="ex-text">D</span></div>
+        </div>
+      </div>
+      <code>flex-wrap: nowrap;  // (default) all flex items will be on one line</code>
+      <div class="ex-container">
+        <div class="ex-block-container" id="ex-block-container-flex-wrap-nowrap">
+            <div id="ex-block-A" class="ex-block-large"><span class="ex-text">A</span></div>
+            <div id="ex-block-B" class="ex-block-large"><span class="ex-text">B</span></div>
+            <div id="ex-block-C" class="ex-block-large"><span class="ex-text">C</span></div>
+            <div id="ex-block-D" class="ex-block-large"><span class="ex-text">D</span></div>
+        </div>
+      </div>
+      <code>flex-wrap: wrap-reverse; //flex items will wrap onto multiple lines from bottom to top.</code>
+      <div class="ex-container">
+        <div class="ex-block-container" id="ex-block-container-column-wrap-reverse">
+            <div id="ex-block-A" class="ex-block-large"><span class="ex-text">A</span></div>
+            <div id="ex-block-B" class="ex-block-large"><span class="ex-text">B</span></div>
+            <div id="ex-block-C" class="ex-block-large"><span class="ex-text">C</span></div>
+            <div id="ex-block-D" class="ex-block-large"><span class="ex-text">D</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="main-section" id="flex-flow">
+      <h3>flex-flow</h3>
+      <p>This is simply shorthand for both flex-direction and flex-wrap. Together they define the flex contaner's main and cross axis.</p>
+      <p>The default setting is:</p>
+      <code>flex-flow : row nowrap;</code>
+      <p>This will fit items onto multiple lines depending on the width of the parent property. All options are:</p>
+      <code>
+        flex-flow: <‘flex-direction’> || <‘flex-wrap’>
+      </code>
+    </section>
+    <section class="main-section" id="justify-content">
+      <h3>justify-content</h3>
+      <p>Set alignment of the main axis with justify-content.</p>
+      <p></p>
+      <code>justify-content: flex-start; // (default): items are packed toward the start line</code>
+          <code>justify-content: flex-end; //items are packed toward to end line</code>
+          <code>justify-content: center; //items are centered along the line</code>
+          <code>justify-content: space-between; //items are evenly distributed in the line; first item is on the start line, last item on the end line</code>
+          <code>justify-content: space-around; //items are evenly distributed in the line with equal space around them. Note that visually the spaces aren't equal, since all the items have equal space on both sides. The first item will have one unit of space against the container edge, but two units of space between the next item because that next item has its own spacing that applies.</code>
+          <code>justify-content: space-evenly; //items are distributed so that the spacing between any two items (and the space to the edges) is equal.</code>
+    </section>
+    <section class="main-section" id="align-items">
+      <h3>justify-content</h3>
+      <p>The "align-items" property defines how items are aligned along the cross axis of the current line.</p>
+      <p>This can be thought of as the "justify-content" version for the cross-axis, which is perpendicular to the main axis.</p>
+
+      <code>
+          align-items: flex-start; //cross-start margin edge of the items is placed on the cross-start line
+          align-items: flex-end; //cross-end margin edge of the items is placed on the cross-end line
+          align-items: center; //items are centered along the line
+          align-items: baseline; //items are aligned such as their baselines align
+          align-items: stretch;  //(default): stretch to fill the container (still respect min-width/max-width)
+      </code>
+    </section>
+    <section class="main-section" id="align-content">
+      <h3>justify-content</h3>
+      <p>The "align-content" property aligns the items to the contianer's lines when there is extra space in the cross-axis.</p>
+      <p>Note that this does nothing when there is only one line of flex items.</p>
+      <code>align-content: flex-start; //lines packed to the start of the container</code>
+      <code>align-content: flex-end; //lines packed to the end of the container</code>
+      <code>align-content: center; //lines packed to the center of the container</code>
+      <code>align-content: space-between; //lines evenly distributed; the first line is at the start of the container while the last one is at the end</code>
+      <code>align-content: space-around; //lines evenly distributed with equal space around each line</code>
+      <code>align-content: stretch;  //(default): lines stretch to take up the remaining space</code>
+    </section>
+    <section class="main-section" id="child-properties">
+      <h2>Child, or Item, Properties</h2>
+      <p>Similarly to how we can style the parent container, the child items within have their own properties that can be styled.</p>
+    </section>
+    <section class="main-section" id="align-content">
+      <h3>order</h3>
+      <p>The "order" property can change the order that items are laid out in.</p>
+      <p>By default the order is set to 0.</p>
+      <code>
+        item{
+          order: <integer>;
+        }
+      </code>
+    </section>
+    <section class="main-section" id="flex-grow">
+      <h3>flex-grow</h3>
+      <p>Flex items have the capacity to grow and fill in space if desired. Changing the flex-grow property lets this happen.</p>
+      <p>flex-grow is a unitless value that will change proportionally to all other values. For instance, if all items are set to 1 aside from Item B that is set to 2, Item B will grow twice as large to fill up space.</p>
+      <p>flex-grow is set to 0 by default and negative numbers are invalid.</p>
+      <code>
+        item{
+          flex-grow: <number>;
+        }
+      </code>
+    </section>
+    <section class="main-section" id="flex-shrink">
+      <h3>flex-shrink</h3>
+      <p>Similarly to flex-grow, this allows a child element to shrink as necessary in a proportional manner.</p>
+      <p>flex-shink is set to 1 by default and negative numbers are invalid.</p>
+      <code>
+        item{
+          flex-shink: <number>;
+        }
+      </code>
+    </section>
+    <section class="main-section" id="flex-basis">
+      <h3>flex-basis</h3>
+      <p>Similarly to flex-grow, this allows a child element to shrink as necessary in a proportional manner.</p>
+      <p>flex-shink is set to 1 by default and negative numbers are invalid.</p>
+      <code>
+        item{
+          flex-basis: <length>; //ex: 20%, 4em, 2px
+          flex-basis: auto;   //(default), sets to width or height property
+        }
+      </code>
+    </section>
+    <section class="main-section" id="flex-shorthand">
+      <h3>flex (shorthand)</h3>
+      <p>The "flex" property is shorthand for using all of the flex-grow, flex-shrink and flex-basis together.</p>
+      <p>flex-shrink and flex-basis are optional.</p>
+      <p>Default is 0 1 auto.</p>
+      <code>
+        item{
+          flex: flex-grow flex-shrink flex-basis;
+          flex: 0 1 100%; //ex
+        }
+      </code>
+    </section>
+    <section class="main-section" id="align-self">
+      <h3>align-self</h3>
+      <p>The "align-self" property allows items to overwrite the default or parent alignment to be overridden.</p>
+      <p>Uses the same values as the align-self property.</p>
+      <p>Default is 0 1 auto.</p>
+      <code>
+        item{
+          flex: flex-grow flex-shrink flex-basis;
+          flex: 0 1 100%; //ex
+        }
+      </code>
+    </section>
+  </main>
+  <footer>
+  </footer>
+  <script src = "scripts.js"></script>
+
+</body>
+</html>
