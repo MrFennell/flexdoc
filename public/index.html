@@ -183,21 +183,19 @@
           <code>justify-content: space-evenly; //items are distributed so that the spacing between any two items (and the space to the edges) is equal.</code>
     </section>
     <section class="main-section" id="align-items">
-      <h3>justify-content</h3>
+      <h3>align-items</h3>
       <p>The "align-items" property defines how items are aligned along the cross axis of the current line.</p>
       <p>This can be thought of as the "justify-content" version for the cross-axis, which is perpendicular to the main axis.</p>
 
-      <code>
-          align-items: flex-start; //cross-start margin edge of the items is placed on the cross-start line
-          align-items: flex-end; //cross-end margin edge of the items is placed on the cross-end line
-          align-items: center; //items are centered along the line
-          align-items: baseline; //items are aligned such as their baselines align
-          align-items: stretch;  //(default): stretch to fill the container (still respect min-width/max-width)
-      </code>
+      <code>align-items: flex-start; //cross-start margin edge of the items is placed on the cross-start line</code>
+      <code>align-items: flex-end; //cross-end margin edge of the items is placed on the cross-end line</code>
+      <code>align-items: center; //items are centered along the line</code>
+      <code>align-items: baseline; //items are aligned such as their baselines align</code>
+      <code>align-items: stretch;  //(default): stretch to fill the container (still respect min-width/max-width)</code>
     </section>
     <section class="main-section" id="align-content">
-      <h3>justify-content</h3>
-      <p>The "align-content" property aligns the items to the contianer's lines when there is extra space in the cross-axis.</p>
+      <h3>align-content</h3>
+      <p>The "align-content" property aligns the items to the container's lines when there is extra space in the cross-axis.</p>
       <p>Note that this does nothing when there is only one line of flex items.</p>
       <code>align-content: flex-start; //lines packed to the start of the container</code>
       <code>align-content: flex-end; //lines packed to the end of the container</code>
@@ -214,11 +212,7 @@
       <h3>order</h3>
       <p>The "order" property can change the order that items are laid out in.</p>
       <p>By default the order is set to 0.</p>
-      <code>
-        item{
-          order: <integer>;
-        }
-      </code>
+      <code> item{ order: integer; } </code>
     </section>
     <section class="main-section" id="flex-grow">
       <h3>flex-grow</h3>
