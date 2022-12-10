@@ -4,7 +4,7 @@
   "description": "Technical documentation on the CSS Flex property with examples.",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "devDependencies": {},
   "scripts": {
